@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.5.18)  11 JUN 2026 11:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.5.18)  12 JUN 2026 01:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1160,11 +1160,11 @@ LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <8> not a
 vailable
 (Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
 n input line 194.
-<image.png, id=68, 225.09094pt x 224.33812pt>
+<image.png, id=68, 51.19125pt x 47.42719pt>
 File: image.png Graphic file (type png)
 <use image.png>
 Package pdftex.def Info: image.png  used on input line 194.
-(pdftex.def)             Requested size: 42.81923pt x 42.67912pt.
+(pdftex.def)             Requested size: 46.067pt x 42.67912pt.
  [2{C:/Users/zakikh/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontawesome5/
 fa5free1.enc} <./image.png>]
 
@@ -1180,7 +1180,7 @@ Package rerunfilecheck Info: File `cv.out' has not changed.
 Here is how much of TeX's memory you used:
  29020 strings out of 467691
  562644 string characters out of 5414503
- 1003714 words of memory out of 5000000
+ 1003721 words of memory out of 5000000
  57478 multiletter control sequences out of 15000+600000
  698797 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1196,7 +1196,7 @@ AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Users/zakikh
 ikh/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/
 zakikh/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/User
 s/zakikh/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso17.pfb>
-Output written on cv.pdf (2 pages, 25735079 bytes).
+Output written on cv.pdf (2 pages, 25736504 bytes).
 PDF statistics:
  132 PDF objects out of 1000 (max. 8388607)
  11 named destinations out of 1000 (max. 500000)
