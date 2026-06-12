@@ -1,4 +1,3 @@
-%% Professional CV – Zakaria Khenchouche
 %% Expanded Projects | Dates on Left | Monochrome Design | Fixed Compilation
 
 \documentclass[11pt,a4paper,sans]{moderncv}
@@ -8,7 +7,7 @@
 \moderncvcolor{black} % Monochrome
 
 % --- Geometry & Spacing ---
-\usepackage[scale=0.86, top=1.2cm, bottom=1.2cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage[scale=0.86, top=1.2cm, bottom=2.5cm, footskip=60pt, left=1.5cm, right=1.5cm]{geometry}
 
 % --- Packages ---
 \usepackage[T1]{fontenc}
@@ -19,18 +18,10 @@
 \usepackage{enumitem}
 \usepackage{etoolbox}
 \usepackage{lastpage}
+\usepackage{refcount}
 \usepackage{fancyhdr}
-\usepackage[link]{qrcode} % Generate QR code dynamically
-
-% --- Custom Footer Configuration ---
-\pagestyle{fancy}
-\fancyhf{} % Clear all fields
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0.4pt} % Subtle separator line
-
-\lfoot{\footnotesize Zakaria Khenchouche -- Développeur Full-Stack}
-\cfoot{\footnotesize Page \thepage\ de \pageref{LastPage}}
-\rfoot{\ifnum\value{page}=\pageref{LastPage} \raisebox{-0.3\height}{\qrcode[height=30pt]{https://zakikh.vercel.app}} \fi}
+\usepackage{graphicx}
+\usepackage{tabularx}
 
 % Customize symbols to be text-based and black
 \renewcommand*{\addresssymbol}{}
@@ -45,8 +36,8 @@
 \address{Constantine, Algérie}{}
 \phone[mobile]{(+213) 554 625 746}
 \email{z\_khenchouche@estin.dz}
-\homepage{zakikh.vercel.app}
-\social[github]{zakikh}
+\homepage{zaki-power.vercel.app}
+\social[github]{zaki-power}
 \photo[75pt][0pt]{cvPhonto.png}
 
 % --- Document Content ---------------------------------------------------------
@@ -55,29 +46,62 @@
 % Fixed: hypersetup must be inside document for moderncv
 \hypersetup{colorlinks=false, pdfborder={0 0 0}}
 
+% --- Page style with footer ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancyfoot[C]{%
+  \parbox[b]{\textwidth}{%
+    \ifnum\value{page}=\getpagerefnumber{LastPage}\relax
+      \begin{minipage}[b]{0.78\textwidth}
+        \scriptsize
+        \raggedright
+        \textbf{Zakaria Khenchouche} \\[0.15em]
+        \faPhone~ (+213) 554 625 746 \\[0.08em]
+        \faEnvelope~ z\_khenchouche@estin.dz \\[0.08em]
+        \faGlobe~ zaki-power.vercel.app \\[0.08em]
+        \faGithub~ zaki-power
+      \end{minipage}\hfill
+      \begin{minipage}[b]{1.8cm}
+        \raggedleft
+        \includegraphics[height=1.5cm]{image.png}%
+      \end{minipage}%
+    \else
+      \hfill \scriptsize \textcolor{gray}{Page \thepage\ / \pageref{LastPage}} \hfill
+    \fi
+  }%
+  \ifnum\value{page}=\getpagerefnumber{LastPage}\relax
+    \\[0.2cm] \centerline{\scriptsize \textcolor{gray}{Page \thepage\ / \pageref{LastPage}}}
+  \fi
+}
+
 \makecvtitle
+\thispagestyle{fancy}
+\vspace*{1.2cm}
 
 % --- Profil Professionnel -----------------------------------------------------
 \section{Profil Professionnel}
 \cvitem{}{%
-Développeur Full-Stack et passionné de cybersécurité à l'ESTIN, j'allie rigueur analytique et créativité technique pour bâtir des solutions numériques à fort impact. Spécialisé dans la conception d'architectures web robustes et sécurisées, je m'efforce de transformer des défis complexes en expériences fluides et performantes. Curieux de nature et tourné vers l'innovation, je mets mon expertise au service de projets qui redéfinissent les standards de l'expérience utilisateur.
+Étudiant en deuxième année du cycle préparatoire à l'ESTIN en Sciences et Technologies de l'Informatique et du Numérique, avec un fort intérêt pour les mathématiques et le développement logiciel.
 }
 
 % --- Enseignement Universitaire -----------------------------------------------
 \section{Enseignement Universitaire}
 
-\cventry{de sept. 2025 à ce jour}
+\cventry{2025 -- 2026}
   {• Classe Preparatoire Maths-Informatique (2eme année)}
   {École supérieure en Sciences et Technologies de l'Informatique et du Numérique (ESTIN)}
   {Béjaia}{}{}
 
-\cventry{de sept. 2024 à juin 2025}
+\cventry{2024 -- 2025}
   {• Classe Preparatoire Maths-Informatique (1ere année)}
   {École supérieure en Sciences et Technologies de l'Informatique et du Numérique (ESTIN)}
   {Béjaia}{}
   {%
     \begin{itemize}[label=•, leftmargin=1.5em, nosep]
-      \item Classé dans le TOP 10\% de la promotion.
+      \item Classé dans le TOP 11\% de la promotion.
       \item Mention bien.
       \item Validation de tous les modules, avec de bonnes notes en algorithmique, mathématiques et électronique.
     \end{itemize}
@@ -97,28 +121,10 @@ Développeur Full-Stack et passionné de cybersécurité à l'ESTIN, j'allie rig
     \end{itemize}
   }
 
-% --- Expertise Technique ------------------------------------------------------
-\section{Expertise Technique}
-\cvitem{Langages}{\textbf{C/C++}, \textbf{Python}, \textbf{JavaScript} (ES6+), Assembleur x86}
-\cvitem{Web Dev}{\textbf{Front-End :}, React.js, Tailwind CSS, HTML5/CSS3 | \textbf{Back-End :}, Django (Python)}
-\cvitem{Cybersécurité}{Analyse de vulnérabilités, Participation aux CTF (NexTrace), Maîtrise de Linux CLI}
-\cvitem{Outils}{Git, GitHub (CI/CD de base), VS Code, Bash Scripting, Docker (notions)}
-
 % --- Réalisations & Projets ---------------------------------------------------
 \section{Réalisations \& Projets}
 
-\cventry{2024}
-  {Saha Event, Plateforme de Réservation de Salles d'Événements}
-  {\href{https://saha-event-4h32.vercel.app}{saha-event-4h32.vercel.app}}
-  {}{}
-  {Développement d'une marketplace full-stack pour la découverte et la réservation de salles en Algérie.
-    \begin{itemize}[label=---, leftmargin=1.5em, nosep]
-      \item Gestion complète du cycle de réservation : recherche, filtrage, paiement et validation par l'administrateur.
-      \item Stack : React.js (Vite), Supabase (Auth, PostgreSQL, Storage), PostgREST, Vercel.
-    \end{itemize}
-  }
-
-\cventry{2024}
+\cventry{2026}
   {Skill Hunt, Plateforme de Recrutement Technique}
   {\href{https://skill-hunt-mvp.vercel.app}{skill-hunt-mvp.vercel.app}}
   {}{}
@@ -126,6 +132,17 @@ Développeur Full-Stack et passionné de cybersécurité à l'ESTIN, j'allie rig
     \begin{itemize}[label=---, leftmargin=1.5em, nosep]
       \item Système d'évaluation technique automatisé ciblant le marché algérien.
       \item Stack : React.js, Supabase, Vercel.
+    \end{itemize}
+  }
+
+\cventry{2025}
+  {Saha Event, Plateforme de Réservation de Salles d'Événements}
+  {\href{https://saha-event-4h32.vercel.app}{saha-event-4h32.vercel.app}}
+  {}{}
+  {Développement d'une marketplace full-stack pour la découverte et la réservation de salles en Algérie.
+    \begin{itemize}[label=---, leftmargin=1.5em, nosep]
+      \item Gestion complète du cycle de réservation : recherche, filtrage, paiement et validation par l'administrateur.
+      \item Stack : React.js (Vite), Supabase (Auth, PostgreSQL, Storage), PostgREST, Vercel.
     \end{itemize}
   }
 
@@ -142,7 +159,7 @@ Développeur Full-Stack et passionné de cybersécurité à l'ESTIN, j'allie rig
 
 \cventry{2024}
   {Portfolio Professionnel \& Showcase}
-  {\href{https://zakikh.vercel.app}{zakikh.vercel.app}}
+  {\href{https://zaki-power.vercel.app}{zaki-power.vercel.app}}
   {}{}
   {Conception et déploiement d'un site vitrine moderne pour présenter mes travaux.
     \begin{itemize}[label=---, leftmargin=1.5em, nosep]
@@ -150,6 +167,14 @@ Développeur Full-Stack et passionné de cybersécurité à l'ESTIN, j'allie rig
       \item Stack : React.js, Framer Motion, Vercel.
     \end{itemize}
   }
+
+\newpage
+% --- Expertise Technique ------------------------------------------------------
+\section{Expertise Technique}
+\cvitem{Langages}{\textbf{C/C++}, \textbf{Python}, \textbf{JavaScript} (ES6+), Assembleur x86}
+\cvitem{Web Dev}{\textbf{Front-End :}, React.js, Tailwind CSS, HTML5/CSS3 | \textbf{Back-End :}, Django (Python)}
+\cvitem{Cybersécurité}{Analyse de vulnérabilités, Participation aux CTF (NexTrace), Maîtrise de Linux CLI}
+\cvitem{Outils}{Git, GitHub (CI/CD de base), VS Code, Bash Scripting, Docker (notions)}
 
 % --- Engagement Associatif ----------------------------------------------------
 \section{Engagement Associatif}
@@ -159,8 +184,8 @@ Développeur Full-Stack et passionné de cybersécurité à l'ESTIN, j'allie rig
 % --- Langues ------------------------------------------------------------------
 \section{Langues}
 \cvitem{Arabe}{Maternel}
-\cvitem{Français}{Niveau B2 (TCF)}
-\cvitem{Anglais}{Niveau B2}
+\cvitem{Français}{Intermédiaire}
+\cvitem{Anglais}{Intermédiaire}
 
 % --- Centres d'Intérêt --------------------------------------------------------
 \section{Centres d'Intérêt}
